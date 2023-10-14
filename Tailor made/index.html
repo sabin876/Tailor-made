@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="booking-form" class="form">
+            <div class="step step-1">
+                <h2>Step 1: Personal Information</h2>
+                <input type="text" placeholder="Name" id="name" required>
+                <input type="email" placeholder="Email" id="email" required>
+                <h3>Select at least three options:</h3>
+                <input type="checkbox" name="option" value="Option 1" id="option1">
+                <label for="option1">Option 1</label>
+                <input type="checkbox" name="option" value="Option 2" id="option2">
+                <label for="option2">Option 2</label>
+                <input type="checkbox" name="option" value="Option 3" id="option3">
+                <label for="option3">Option 3</label>
+                <button class="next-btn" onclick="nextStep(1)">Next</button>
+            </div>
+            <div class="step step-2">
+                <h2>Step 2: More Options</h2>
+                <h3>Select any number of options:</h3>
+                <input type="checkbox" name="moreOptions" value="Option 4" id="option4">
+                <label for="option4">Option 4</label>
+                <input type="checkbox" name="moreOptions" value="Option 5" id="option5">
+                <label for="option5">Option 5</label>
+                <input type="checkbox" name="moreOptions" value="Option 6" id="option6">
+                <label for="option6">Option 6</label>
+                <input type="checkbox" name="moreOptions" value="Option 7" id="option7">
+                <label for="option7">Option 7</label>
+                <input type="checkbox" name="moreOptions" value="Option 8" id="option8">
+                <label for="option8">Option 8</label>
+                <button class="prev-btn" onclick="prevStep(2)">Previous</button>
+                <button class="next-btn" onclick="nextStep(2)">Next</button>
+            </div>
+            <div class="step step-3">
+                <h2>Step 3: Choose Date</h2>
+                <input type="date" id="booking-date" required>
+                <button class="prev-btn" onclick="prevStep(3)">Previous</button>
+                <button class="next-btn" onclick="nextStep(3)">Next</button>
+            </div>
+            <div class="step step-4">
+                <h2>Step 4: Select Service</h2>
+                <select id="service" required>
+                    <option value="">Select Service</option>
+                    <option value="Service A">Service A</option>
+                    <option value="Service B">Service B</option>
+                    <option value="Service C">Service C</option>
+                </select>
+                <button class="prev-btn" onclick="prevStep(4)">Previous</button>
+                <button class="next-btn" onclick="nextStep(4)">Next</button>
+            </div>
+            <div class="step step-5">
+                <h2>Step 5: Confirmation</h2>
+                <p>Name: <span id="confirmation-name"></span></p>
+                <p>Email: <span id="confirmation-email"></span></p>
+                <p>Date: <span id="confirmation-date"></span></p>
+                <p>Service: <span id="confirmation-service"></span></p>
+                <p>Selected Options: <span id="confirmation-options"></span></p>
+                <button class="prev-btn" onclick="prevStep(5)">Previous</button>
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
